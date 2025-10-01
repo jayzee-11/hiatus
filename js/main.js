@@ -8,7 +8,7 @@ import { singleClickhandler } from './singleClick.js';
 import { closeInfoPopup } from './popupInfo.js';
 
 const imgs = [];
-    for (let i = 1; i <= 20; i++) {
+    for (let i = 1; i <= 25; i++) {
     imgs.push(`${i}.jpg`);
     }
 
@@ -64,13 +64,6 @@ Graph.onBackgroundRightClick(() => {
         // Cancel selection when right-clicking background
         clearSelection();
       });
-
-//Pop up notice 
-/*Graph.onNodeClick(showNodeInfo(Graph, gData));
-
-Graph.onBackgroundClick(() => {
-    closeInfoPopup();
-});*/
  
 Graph.d3Force('link').distance(36);
 Graph.d3Force('charge').strength(-36);

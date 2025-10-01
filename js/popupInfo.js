@@ -1,7 +1,7 @@
 let infoPopup = null;
 
 function showNodeInfo(node, event, Graph, gData) {
-    console.log('Show info for node directly');
+    //console.log('Show info for node directly');
     // Close existing popup
     closeInfoPopup();
 
@@ -20,16 +20,20 @@ function showNodeInfo(node, event, Graph, gData) {
     infoPopup = document.createElement('div');
     infoPopup.style.cssText = `
       position: fixed;
-      background: white;
-      border: 2px solid #333;
-      border-radius: 8px;
-      padding: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border: 1.5px solid #adb5bd;
+      border-radius: 10px;
+      padding: 16px 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1), 0 2px 6px rgba(0,0,0,0.06);
       z-index: 1000;
-      font-family: Arial, sans-serif;
+      font-family: 'Space Grotesk', Arial, sans-serif;
       font-size: 14px;
-      max-width: 300px;
+      color: #2d3436;
+      max-width: 320px;
       pointer-events: auto;
+      backdrop-filter: blur(2px);
+      transition: box-shadow 0.2s;
+      line-height: 1.5;
     `;
     
     // Position near mouse
@@ -38,7 +42,7 @@ function showNodeInfo(node, event, Graph, gData) {
     
     // Populate with node information
     infoPopup.innerHTML = `
-      <h3 style="margin: 0 0 10px 0; color: #333;">Node Information</h3>
+      <h3 style="margin: 0 0 10px 0; color: #333; font-family: 'Space Grotesk', sans-serif;">Node Information</h3>
       <p><strong>ID:</strong> ${node.id}</p>
       <p><strong>Image:</strong> ${node.img}</p>
       <p><strong>Position:</strong> (${node.x?.toFixed(1)}, ${node.y?.toFixed(1)}, ${node.z?.toFixed(1)})</p>
